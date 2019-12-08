@@ -36,19 +36,6 @@ func permutations(arr []int) [][]int {
 	return res
 }
 
-func permutationCombine(arr1, arr2 [][]int) [][]int {
-	results := [][]int{}
-	for _, a := range arr1 {
-		for _, b := range arr2 {
-			tmp := make([]int, len(a)+len(b))
-			copy(tmp, a)
-			copy(tmp[len(a):], b)
-			results = append(results, tmp)
-		}
-	}
-	return results
-}
-
 func amplifierInput(phaseSetting, ampOutput int) func() int {
 	inputCount := 0
 	return func() int {
